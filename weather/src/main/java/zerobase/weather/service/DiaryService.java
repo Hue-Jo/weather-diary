@@ -15,6 +15,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -49,6 +50,14 @@ public class DiaryService {
         nowDiary.setText(text);
         nowDiary.setDate(date);
         diaryRepository.save(nowDiary);
+    }
+
+    public List<Diary> readDiary(LocalDate date) {
+        return diaryRepository.findAllByDate(date);
+    }
+
+    public List<Diary> readDiaries(LocalDate startDate, LocalDate endDate) {
+        return diaryRepository.findAllByDateBetween(startDate, endDate);
     }
 
     // open weather map에서 날씨데이터 가져오기
@@ -102,6 +111,5 @@ public class DiaryService {
         return resultMap;
     }
 
-    // 파싱된 데이터 & 일기를 DB에 저장하기
 
 }
