@@ -28,6 +28,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    // Spring Boot 3 버전부터는 Springfox 대신 Springdoc OpenAPI를 사용해야 함
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
